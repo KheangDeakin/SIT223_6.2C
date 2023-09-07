@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages{
         stage("Build"){
             steps{
@@ -9,8 +8,8 @@ pipeline {
             post{
                 always{
                     mail to: "newtaltar@gmail.com",
-                        subject: "Build Status Email",
-                        body: "Build log attached!"
+                    subject: "Build Status Email",
+                    body: "Build log attached!"
             
                 }
             }
@@ -21,12 +20,10 @@ pipeline {
                 echo "Testing ..."
             }
         }
-
         stage("Deploy"){
             steps{
                 echo "Deploying"
             }
         }
     }
-
 }
